@@ -60,6 +60,43 @@
             }
 
         }
+
+
+        public function deleteProduct($id){
+            $where = array('id' => $id);
+            $this->ProductModel->deleteProducts($where, 'product');
+            redirect('ProductController');
+        }
+
+        public function editProduct($id){
+            $where =  array('id' => $id);
+            $data['title'] = "Update Product";
+            $data['product'] = $this->ProductModel->editProducts($where, 'product')->result();
+            $this->load->view("templates/header", $data);
+            $this->load->view('product/updateProduct', $data);
+            $this->load->view("templates/footer");
+
+        }
+
+        public function updateProduct(){
+            $id = $this->input->post('id');
+            $productName =  $this->input->post('product-name');
+            $productPrice = $this->input->post('product-price');
+            $stock = $this->input->post('product-stock');
+
+            $data = array(
+                "productName" => $productName,
+                "productPrice" => $productPrice,
+                "stock" => $stock
+            );
+
+            $where = array(
+                'id' => $id
+            );
+
+            $this->ProductModel->updateProducts($where, $data, 'product');
+            redirect('ProductController');
+        }
     }
 
 ?>  

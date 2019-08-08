@@ -17,6 +17,20 @@
             $this->db->insert('product', $data);
         }
 
+        public function deleteProducts($where, $table){
+            $this->db->where($where);
+            $this->db->delete($table);
+        }
+
+        public function editProducts($where, $table){
+            return $this->db->get_where($table, $where);
+        }
+
+        public function updateProducts($where, $data, $table){
+            $this->db->where($where);
+		    $this->db->update($table,$data);
+        }
+
 
     }
 

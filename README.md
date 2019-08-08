@@ -8,6 +8,6 @@
 
 to do list besok
 
-1. Melakukan update dan delete pada program CI
-2. Membuat halaman shopping cart
-3. Membuat sistem shopping cart dengan menggunakan Library pada CI
+1. Melakukan update dan delete pada program CI [done]
+2. Membuat halaman shopping cart [progress]
+3. Membuat sistem shopping cart dengan menggunakan Library pada CI[progress]

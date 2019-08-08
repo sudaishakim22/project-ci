@@ -4,6 +4,12 @@
     //$this->load->view("header") cara bang kunglaw
 
 ?>
+<style>
+    .btn {
+        margin: 5px;
+    }
+
+</style>
 <div class="container">
     <div class="row mt-3">
         <div class="col-md-6">
@@ -17,6 +23,8 @@
                         <?php echo $prd["productName"];?>
                         <br>
                         <?php echo $prd["productPrice"]; ?>
+                        <p style="float: right; margin: 3px;"><?php echo anchor('ProductController/deleteProduct/'.$prd['id'],'delete');?></p>
+                        <p style="float: right; margin: 3px;"><?php  echo anchor('ProductController/editProduct/'.$prd['id'],'update');?></p>
                     </li>
                 <?php endforeach;?>
             </ul>
