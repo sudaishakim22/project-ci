@@ -6,6 +6,11 @@
             return $query->result_array();
         }
 
+        public function getDataCart($where, $table){
+            $query = $this->db->get_where($table, $where);
+            return $query->result_array();
+        }
+
         public function addProducts($image){
 
             $data = [
